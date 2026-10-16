@@ -1,0 +1,61 @@
+.card{
+    margin: 0 auto;
+    background-color:rgb(203, 255, 238);
+    border-radius: 20px; 
+    padding: 40px 40px;
+    text-align: center;
+    width: 400px;
+}
+
+h3{
+    color:rgb(64, 92, 83) ;
+    margin-top: 0;
+}
+
+button{
+    background-color:rgb(116, 250, 206);
+    border-radius: 15px;
+    font-size: 15px;
+    padding: 10px;
+    color: rgb(26, 120, 98);
+}
+
+.pick{
+    color:rgb(0, 165, 118);
+}
+
+ul{
+    list-style: none;
+    margin-top: 20px;
+    text-align: left;
+}
+
+li{
+    padding: 10px;
+    background-color: rgb(132, 255, 226);
+    border-radius: 10px;
+    border-left: 4px solid rgb(1, 170, 114);
+    color: rgb(26, 120, 98);
+}
+
+li.pick{
+    background-color:rgb(132, 255, 226);
+    border-left-color: rgb(64, 92, 83) ;
+    font-weight: bold;
+    color:rgb(46, 67, 60) ;
+}
+
+.fokus-blok{
+    background-color: rgb(132, 255, 226);
+    border: 2px dashed rgb(46, 118, 101);;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 16px;
+    color: rgb(26, 120, 98);
+    font-weight: bold;
+}
+
+.hidden{
+    display: none;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Olololololololo</title>
+    <link href="css.css" rel="stylesheet">
+</head>
+<body>
+<div class="card">
+    <h3>Выбрать задачу: </h3>
+    <button id = "task_selection" onclick="all_tasks()">Сгенирировать задачи на день</button><br>
+    <button id = "task_one" onclick="one_task()">Выбрать рандомную задачу</button>
+
+    <div id="obj_task_one" class="fokus-blok hidden"></div>
+    
+    <ul id="tasks" class="hidden">
+        <li id="random_task-0"></li>
+        <li id="random_task-1"></li>
+        <li id="random_task-2"></li>
+        <li id="random_task-3"></li>
+        <li id="random_task-4"></li>
+    </ul>
+</div> 
+
+
+    <script>
+        
+        let mas = [
+            "Сделать 100 приседаний",
+            "Простоять планку 30 сек",
+            "Отжаться пять раз",
+            "Сделать выпады по 10 раз",
+            "Отжаться от пола 10 раз",
+            "Сделать мостик",
+            "Прыгать на правой ноге 40 сек",
+            "Прыгать на левой ноге 40 сек",
+            "Прыгать на двух ногах 1 минуту",
+            "Бег на месте 1 минуту",
+            "Наклоны корпусом: 40 наклонов",
+            "Перекатывание с пятки на носок",
+            "Стульчик от стены 50 сек",
+            "Выпить водички :)"
+        ]
+
+        let one = [];
+
+        let but_tasks = document.getElementById("task_selection");
+
+        let but_one = document.getElementById("task_one");
+
+        let obj_one = document.getElementById("obj_task_one");
+
+        let list = document.getElementById("tasks");
+
+        //Функция для общего списка задач
+        let all_tasks = () => {
+
+        while(one.length < 5){
+            let random = Math.floor(Math.random() * mas.length);
+            let random_task = mas[random];
+            
+            if(!one.includes(random_task)){
+                one.push(random_task);
+            }
+        }
+            for(let i = 0; i< one.length; i++){
+                let li = document.getElementById("random_task-" + i);
+                li.textContent = (i+1) + "." + one[i];
+            }
+            list.classList.remove("hidden");
+        }
+
+
+
+        //Функция для одной задачи из списка
+        let one_task = () => {
+            if(one.length === 0){
+                alert("Нужно сгенирировать задачи по кнопке");
+                return;
+            }
+
+            let one_random = Math.floor(Math.random() * one.length);
+            let one_random_task = one[one_random];
+
+          
+            obj_one.textContent =  "Задача: " + one_random_task;
+            obj_one.classList.remove("hidden"); 
+            
+            for(let i = 0; i< one.length; i++){
+                let output = document.getElementById("random_task-" + i);
+                output.classList.remove("pick");
+            
+
+            if(i === one_random){
+                output.classList.add("pick");
+            }
+        }
+    }
+
+   </script>
+</body>
+</html>
